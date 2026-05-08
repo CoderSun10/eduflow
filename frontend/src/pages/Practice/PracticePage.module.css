@@ -1,0 +1,306 @@
+.page {
+  padding: 32px 40px;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* ── 数据概览 ── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+  appearance: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition:
+    transform 0.24s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-border);
+}
+
+.statNum {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--color-text-strong);
+}
+
+.correctColor {
+  color: #22c55e;
+}
+.wrongColor {
+  color: #ef4444;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* ── 模式入口卡片 ── */
+.modeGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.modeCard {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  background: var(--color-surface-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.26s cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.modeCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary),
+    var(--color-primary-hover)
+  );
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.modeCard:hover {
+  border-color: var(--color-primary-border);
+  box-shadow: var(--shadow-md);
+  transform: translateX(3px);
+}
+
+.modeCard:hover::before {
+  transform: scaleY(1);
+}
+
+.modeCard:hover .modeIcon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.modeIcon {
+  transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.modeIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconFocused {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.iconComprehensive {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.iconProject {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.iconWrongNotes {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.modeBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.modeLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 3px;
+}
+
+.modeDesc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.modeArrow {
+  flex-shrink: 0;
+  color: var(--color-text-soft);
+  transition: transform var(--transition-fast);
+}
+
+.modeCard:hover .modeArrow {
+  transform: translateX(3px);
+  color: var(--color-primary);
+}
+
+/* ── 最近练习 ── */
+.recentSection {
+  margin-top: 4px;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 14px;
+}
+
+.historyList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.historyCard {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.historyCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-border);
+  box-shadow: var(--shadow-md);
+}
+
+.historyCard:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.historyTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.historyMode {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.historyLang {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.historyDate {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--color-text-soft);
+}
+
+.historyTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.historyBottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.historyScore {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-strong);
+  white-space: nowrap;
+}
+
+.historyBar {
+  flex: 1;
+  height: 5px;
+  background: var(--color-border-soft);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.historyFill {
+  height: 100%;
+  border-radius: 3px;
+  background: #22c55e;
+}
+
+.historyMetaText {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}

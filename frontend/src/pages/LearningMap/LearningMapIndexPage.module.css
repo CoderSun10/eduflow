@@ -1,0 +1,420 @@
+.page {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heroShell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.72fr);
+  gap: 16px;
+  padding: 28px 30px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-3) 0%,
+    var(--color-bg-subtle) 100%
+  );
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.heroEyebrow,
+.historyBadge,
+.guideLabel,
+.tipChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.heroEyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.subtitle,
+.heroMetaLabel,
+.heroMetaHint,
+.sectionSubtitle,
+.hint,
+.guideText,
+.historyGoal,
+.historyDate,
+.historyFooter,
+.stateBox {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.subtitle {
+  margin-top: 8px;
+  max-width: 880px;
+}
+
+.heroTips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tipChip {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--color-border-soft);
+  font-weight: 600;
+}
+
+.heroMetaCard,
+.historyPanel,
+.composer,
+.guideCard,
+.historyCard {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.heroMetaCard {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heroMetaValue {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(320px, 0.88fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.historyPanel,
+.composer,
+.guideCard {
+  padding: 20px;
+}
+
+.historyPanel,
+.composer {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHeadRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.historyCard {
+  width: 100%;
+  padding: 16px 18px;
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-3),
+    var(--color-bg-subtle)
+  );
+  border: 1px solid var(--color-border-soft);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.historyOpenBtn {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.historyCard:hover {
+  border-color: var(--color-primary-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.historyTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.historyTitle,
+.guideTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.historyTitle {
+  margin-bottom: 6px;
+}
+
+.historyGoal {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.historyMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}
+
+.historyFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-divider-light);
+}
+
+.input {
+  width: 100%;
+  min-height: 360px;
+  resize: vertical;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-bg-subtle);
+  color: var(--color-text-body);
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.75;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.composerFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.composerActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.voiceAction {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.voiceAction:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.voiceAction:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.voiceAction.recording {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+  animation: voicePulse 1.5s ease-in-out infinite;
+}
+
+.voiceAction.processing {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+@keyframes voicePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+.voiceLoading {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: voiceSpin 0.8s linear infinite;
+}
+
+@keyframes voiceSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.speechError {
+  margin-top: 8px;
+  padding: 6px 0;
+  font-size: 11px;
+  color: #ef4444;
+}
+
+.guideLabel {
+  margin-bottom: 12px;
+}
+
+.guideTitle {
+  line-height: 1.45;
+}
+
+.guideText {
+  margin-top: 10px;
+}
+
+.ghostAction {
+  margin-top: 16px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ghostAction:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.ghostAction:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.stateBox,
+.errorBox {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-subtle);
+}
+
+.errorBox {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.14);
+}
+
+@media (max-width: 1100px) {
+  .heroShell,
+  .layoutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .historyPanel,
+  .composer {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 24px 18px;
+  }
+
+  .composerFooter,
+  .composerActions,
+  .historyTop,
+  .historyFooter,
+  .sectionHeadRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

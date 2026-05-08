@@ -1,0 +1,439 @@
+/**
+ * 全局基础样式
+ *
+ * 仅包含 reset 与最基础的 body / 链接默认值；组件样式请放各自 module.css。
+ */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg-app);
+  color: var(--color-text-strong);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-user-select: none;
+  user-select: none;
+  background-image:
+    radial-gradient(
+      circle at top left,
+      rgba(79, 124, 255, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 24%
+    ),
+    linear-gradient(180deg, var(--color-bg-canvas) 0%, var(--color-bg-app) 100%);
+  background-attachment: fixed;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base);
+}
+
+/* 允许选中的区域：输入框、代码、学习内容正文 */
+input,
+textarea,
+select,
+pre,
+code,
+[contenteditable],
+article,
+.selectable {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-primary-soft-2);
+  color: var(--color-text-strong);
+}
+
+::placeholder {
+  color: var(--color-text-placeholder);
+  opacity: 1;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-soft);
+}
+
+button,
+input,
+textarea,
+select {
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+/* —— 全局 focus-visible 优化（更柔和高级感）—— */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: 6px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] button,
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select {
+  color: var(--color-text-body);
+}
+
+:root[data-theme="dark"] svg text,
+:root[data-theme="dark"] .markmapSvg text {
+  fill: var(--color-text-strong);
+}
+
+:root[data-theme="dark"] .markmapSvg line,
+:root[data-theme="dark"] .markmapSvg path,
+:root[data-theme="dark"] .markmapSvg polyline,
+:root[data-theme="dark"] .markmapSvg polygon {
+  stroke: var(--color-text-muted);
+}
+
+.markdownRenderer {
+  color: var(--color-text-body);
+  line-height: 1.75;
+}
+
+.markdownRenderer h1,
+.markdownRenderer h2,
+.markdownRenderer h3,
+.markdownRenderer h4,
+.markdownRenderer h5,
+.markdownRenderer h6 {
+  color: var(--color-text-strong);
+  line-height: 1.45;
+  margin: 18px 0 10px;
+}
+
+.markdownRenderer h1 {
+  font-size: 22px;
+}
+
+.markdownRenderer h2 {
+  font-size: 19px;
+}
+
+.markdownRenderer h3 {
+  font-size: 16px;
+}
+
+.markdownRenderer p,
+.markdownRenderer ul,
+.markdownRenderer ol,
+.markdownRenderer blockquote,
+.markdownRenderer pre,
+.markdownRenderer table {
+  margin: 10px 0;
+}
+
+.markdownRenderer ul,
+.markdownRenderer ol {
+  padding-left: 20px;
+}
+
+.markdownRenderer li {
+  margin: 4px 0;
+}
+
+.markdownRenderer a {
+  color: var(--color-primary);
+}
+
+.markdownRenderer strong {
+  color: var(--color-text-strong);
+}
+
+.markdownRenderer blockquote {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 12px;
+  color: var(--color-text-soft);
+}
+
+.markdownRenderer :not(pre) > code {
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--color-primary);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.markdownRenderer pre {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-bg-muted);
+  padding: 14px 16px;
+}
+
+.markdownRenderer pre code {
+  background: transparent;
+  color: var(--color-text-body);
+  padding: 0;
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.markdownRenderer table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.markdownRenderer th,
+.markdownRenderer td {
+  border: 1px solid var(--color-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdownRenderer th {
+  background: var(--color-surface-3);
+  color: var(--color-text-strong);
+}
+
+.markdownRenderer hr {
+  border: none;
+  border-top: 1px solid var(--color-border-soft);
+  margin: 18px 0;
+}
+
+.markdownRenderer .katex {
+  color: inherit;
+  font-size: 1.05em;
+}
+
+.markdownRenderer .katex-block {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 6px;
+}
+
+:root[data-theme="dark"] .markdownRenderer pre {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+:root[data-theme="dark"] .markdownRenderer :not(pre) > code {
+  background: rgba(147, 197, 253, 0.12);
+  color: #93c5fd;
+}
+
+/* —— highlight.js 语法高亮主题（亮色） —— */
+.markdownRenderer pre.hljs {
+  background: #f8fafc;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  padding: 16px 18px;
+  overflow-x: auto;
+}
+
+.markdownRenderer pre.hljs code {
+  background: transparent;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* 亮色主题语法高亮 */
+.markdownRenderer .hljs-keyword,
+.markdownRenderer .hljs-selector-tag,
+.markdownRenderer .hljs-built_in,
+.markdownRenderer .hljs-name {
+  color: #7c3aed;
+}
+
+.markdownRenderer .hljs-string,
+.markdownRenderer .hljs-attr {
+  color: #059669;
+}
+
+.markdownRenderer .hljs-number,
+.markdownRenderer .hljs-literal {
+  color: #d97706;
+}
+
+.markdownRenderer .hljs-comment,
+.markdownRenderer .hljs-quote {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.markdownRenderer .hljs-function,
+.markdownRenderer .hljs-title {
+  color: #2563eb;
+}
+
+.markdownRenderer .hljs-variable,
+.markdownRenderer .hljs-params {
+  color: #0891b2;
+}
+
+.markdownRenderer .hljs-type,
+.markdownRenderer .hljs-class {
+  color: #db2777;
+}
+
+.markdownRenderer .hljs-meta {
+  color: #64748b;
+}
+
+.markdownRenderer .hljs-regexp {
+  color: #ea580c;
+}
+
+.markdownRenderer .hljs-symbol {
+  color: #4f46e5;
+}
+
+/* —— highlight.js 语法高亮主题（暗色） —— */
+:root[data-theme="dark"] .markdownRenderer pre.hljs {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+:root[data-theme="dark"] .markdownRenderer pre.hljs code {
+  color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-keyword,
+:root[data-theme="dark"] .markdownRenderer .hljs-selector-tag,
+:root[data-theme="dark"] .markdownRenderer .hljs-built_in,
+:root[data-theme="dark"] .markdownRenderer .hljs-name {
+  color: #c4b5fd;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-string,
+:root[data-theme="dark"] .markdownRenderer .hljs-attr {
+  color: #6ee7b7;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-number,
+:root[data-theme="dark"] .markdownRenderer .hljs-literal {
+  color: #fbbf24;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-comment,
+:root[data-theme="dark"] .markdownRenderer .hljs-quote {
+  color: #64748b;
+  font-style: italic;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-function,
+:root[data-theme="dark"] .markdownRenderer .hljs-title {
+  color: #93c5fd;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-variable,
+:root[data-theme="dark"] .markdownRenderer .hljs-params {
+  color: #67e8f9;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-type,
+:root[data-theme="dark"] .markdownRenderer .hljs-class {
+  color: #f9a8d4;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-meta {
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-regexp {
+  color: #fb923c;
+}
+
+:root[data-theme="dark"] .markdownRenderer .hljs-symbol {
+  color: #a5b4fc;
+}
+
+:root[data-theme="dark"] .markdownRenderer .katex,
+:root[data-theme="dark"] .markdownRenderer .katex * {
+  color: var(--color-text-strong);
+}
+
+/* —— 通用淡入动画（页面级别可加 .fadeIn） —— */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeInUp 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* —— 减少动画偏好用户照顾 —— */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

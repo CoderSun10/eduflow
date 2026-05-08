@@ -1,0 +1,343 @@
+.page {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.backBtn,
+.ghostBtn,
+.primaryBtn,
+.dangerBtn {
+  border: none;
+  cursor: pointer;
+}
+
+.backBtn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.topMeta {
+  font-size: 12px;
+  color: var(--color-text-soft);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 920px;
+}
+
+.stateBox,
+.emptyBox,
+.card,
+.infoCard,
+.feedbackCard,
+.retryCard,
+.retryItem {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.stateBox,
+.emptyBox {
+  padding: 24px;
+  font-size: 14px;
+  color: var(--color-text-body);
+}
+
+.emptyTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 8px;
+}
+
+.emptyText {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headerMain {
+  min-width: 0;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.typeBadge,
+.retryPill,
+.retryStatus {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.typeBadge {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.tags,
+.time,
+.retryHint {
+  font-size: 12px;
+  color: var(--color-text-soft);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  line-height: 1.45;
+}
+
+.headerActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ghostBtn,
+.dangerBtn,
+.primaryBtn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ghostBtn {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-body);
+}
+
+.primaryBtn {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dangerBtn {
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  background: rgba(220, 38, 38, 0.08);
+  color: var(--color-danger);
+}
+
+.problemBlock,
+.feedbackCard,
+.retryCard,
+.retryHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.problemBlock {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-soft);
+}
+
+.blockTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.smallTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.markdown {
+  color: var(--color-text-body);
+}
+
+.optionList {
+  display: grid;
+  gap: 8px;
+}
+
+.optionItem {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+  font-size: 13px;
+}
+
+.optionContent :global(p) {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.infoCard,
+.feedbackCard,
+.retryCard,
+.retryHistory {
+  padding: 18px;
+}
+
+.retryHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.retryInput {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-muted);
+  color: var(--color-text-strong);
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  outline: none;
+}
+
+.retryInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+}
+
+.retryActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.retryList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.retryItem {
+  padding: 16px;
+}
+
+.retryMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--color-text-soft);
+}
+
+.retrySection + .retrySection {
+  margin-top: 12px;
+}
+
+.retryCorrect {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.retryWrong {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 24px 18px;
+  }
+
+  .topRow,
+  .cardHeader,
+  .retryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerActions,
+  .retryActions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

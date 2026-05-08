@@ -1,0 +1,223 @@
+.wb {
+  display: grid;
+  grid-template-rows: 48px 1fr;
+  background: var(--color-bg-app);
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.header {
+  background: var(--color-surface-3);
+  border-bottom: 1px solid var(--color-border-soft);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 14px;
+}
+
+.back {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-soft);
+  flex-shrink: 0;
+}
+
+.back:hover {
+  color: var(--color-text-body);
+  border-color: var(--color-border-strong);
+}
+
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sep {
+  color: var(--color-text-placeholder);
+}
+
+.current {
+  color: var(--color-text-body);
+}
+
+.tag {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 3px 9px;
+  border-radius: 5px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.progressLabel {
+  font-size: 12px;
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+}
+
+.progressBar {
+  width: 110px;
+  height: 4px;
+  background: var(--color-border-soft);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.progressPct {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.body {
+  display: grid;
+  /* grid-template-columns set inline via JS for resizable right panel */
+  overflow: hidden;
+  position: relative;
+  min-height: 0;
+  height: 100%;
+}
+
+.loadingPane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.loadingCard {
+  width: min(560px, 100%);
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.loadingSpinner {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  animation: wbPulse 1.5s ease-in-out infinite;
+}
+
+.loadingTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 8px;
+}
+
+.loadingDesc {
+  font-size: 14px;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+}
+
+/* ── 右栏容器 ── */
+.rightArea {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  min-height: 0;
+  height: 100%;
+}
+
+.resizeHandle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.15s;
+  z-index: 5;
+}
+
+.resizeHandle:hover,
+.resizeHandle:active {
+  background: var(--color-primary);
+  opacity: 0.3;
+}
+
+.collapseBtn {
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 44px;
+  border-radius: 6px 0 0 6px;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-soft);
+  transition: all var(--transition-fast);
+  z-index: 11;
+}
+
+.collapseBtn:hover {
+  background: var(--color-bg-muted);
+  color: var(--color-primary);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-soft);
+  font-size: 14px;
+}
+
+@keyframes wbPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.72;
+  }
+}

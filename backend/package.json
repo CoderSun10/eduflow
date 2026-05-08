@@ -1,0 +1,49 @@
+{
+  "name": "eduflow-backend",
+  "version": "0.1.0",
+  "description": "EduFlow AI 后端服务（用户、认证、学习会话编排）",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:init": "node src/config/initDb.js",
+    "db:reset": "node src/config/initDb.js --reset",
+    "db:migrate": "node src/migrate.js", 
+    "lint": "eslint src/",
+    "test": "echo \"待补充测试框架\" && exit 0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "eduflow",
+    "education",
+    "ai",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alicloud/pop-core": "^1.8.0",
+    "alibabacloud-nls": "^1.0.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.10.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.7",
+    "openai": "^6.35.0",
+    "pg": "^8.20.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0"
+  }
+}

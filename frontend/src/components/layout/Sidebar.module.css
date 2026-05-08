@@ -1,0 +1,264 @@
+.sidebar {
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border-soft);
+  display: flex;
+  flex-direction: column;
+  width: 236px;
+  flex-shrink: 0;
+  transition: width 0.2s ease;
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.03);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebarCollapsed {
+  width: 72px;
+}
+
+.sidebarCollapsed .item {
+  justify-content: center;
+  padding: 12px 0;
+  margin: 2px 10px;
+}
+
+.brand {
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--color-border-divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 68px;
+}
+
+.collapseToggle {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface-1);
+  color: var(--color-text-soft);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.collapseToggle:hover {
+  background: var(--color-surface-2);
+  color: var(--color-text-body);
+  box-shadow: var(--shadow-sm);
+}
+
+.brandToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  min-height: 34px;
+  border-radius: 10px;
+  transition: background var(--transition-fast);
+}
+
+.brandToggle:hover {
+  background: var(--color-surface-1);
+}
+
+.brandToggleLogo {
+  display: flex;
+  transition: opacity var(--transition-fast);
+}
+
+.brandToggle:hover .brandToggleLogo {
+  opacity: 0;
+  position: absolute;
+}
+
+.brandToggleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  color: var(--color-text-soft);
+  transition: opacity var(--transition-fast);
+}
+
+.brandToggle:hover .brandToggleIcon {
+  opacity: 1;
+  position: static;
+}
+
+.nav {
+  flex: 1;
+  padding: 12px 0;
+  overflow-y: auto;
+}
+
+.section {
+  padding: 18px 20px 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text-soft);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  margin: 2px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.item:hover {
+  background: var(--color-surface-1);
+  border-color: var(--color-border-soft);
+  transform: translateX(2px);
+  text-decoration: none;
+}
+
+.itemActive {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-soft),
+    rgba(56, 189, 248, 0.08)
+  );
+  border-color: var(--color-primary-border);
+  box-shadow: var(--glow-primary);
+}
+
+.itemIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.itemLabel {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.itemBadge {
+  margin-left: auto;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.footer {
+  padding: 14px 12px 18px;
+  border-top: 1px solid var(--color-border-divider);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerSlot {
+  color: var(--color-text-soft);
+  font-size: 12px;
+}
+
+/* ── 移动端响应式 ── */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .sidebarCollapsed {
+    width: 280px;
+    transform: translateX(-100%);
+  }
+
+  .sidebarCollapsed.sidebarOpen {
+    transform: translateX(0);
+  }
+}
+
+/* 移动端菜单按钮 */
+.mobileMenuBtn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.mobileMenuBtn:hover {
+  background: var(--color-surface-2);
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .mobileMenuBtn {
+    display: flex;
+  }
+}
+
+/* 移动端遮罩 */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .mobileOverlay {
+    display: block;
+  }
+}

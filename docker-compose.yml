@@ -1,0 +1,129 @@
+# ─────────────────────────────────────────────────────────────────
+# EduFlow - Docker Compose Production Configuration
+# ─────────────────────────────────────────────────────────────────
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: eduflow-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123456}
+      POSTGRES_DB: ${POSTGRES_DB:-eduflow}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - eduflow-network
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-eduflow}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: eduflow-redis
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-}
+    command: >
+      sh -c 'if [ -n "$$REDIS_PASSWORD" ]; then
+        redis-server --appendonly yes --requirepass "$$REDIS_PASSWORD";
+      else
+        redis-server --appendonly yes;
+      fi'
+    volumes:
+      - redis_data:/data
+    networks:
+      - eduflow-network
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'if [ -n "$$REDIS_PASSWORD" ]; then redis-cli -a "$$REDIS_PASSWORD" ping; else redis-cli ping; fi',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API
+    # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: eduflow-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ./backend/.env
+    networks:
+      - eduflow-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:4000/api/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend (Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: eduflow-frontend
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: ${SERVER_NAME:-www.sunqi.xin sunqi.xin}
+    ports:
+      - "${FRONTEND_PORT:-80}:80"
+      - "${FRONTEND_SSL_PORT:-443}:443"
+    volumes:
+      - ./frontend/nginx.conf:/etc/nginx/templates/default.conf.template:ro
+      - ${SSL_CERT_PATH:-./www.sunqi.xin.pem}:/etc/nginx/ssl/server.crt:ro
+      - ${SSL_KEY_PATH:-./www.sunqi.xin.key}:/etc/nginx/ssl/server.key:ro
+    depends_on:
+      - backend
+    networks:
+      - eduflow-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:80/",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  eduflow-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:

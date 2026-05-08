@@ -1,0 +1,180 @@
+/**
+ * 设计令牌（Design Tokens）
+ *
+ * 数值来自 description/ 下的 HTML 设计稿，所有颜色 / 字号 / 圆角统一在此声明，
+ * 业务组件只引用 var(--xx)，未来要换主题（深色版）只改本文件。
+ */
+
+:root {
+  /* —— 主色系（蓝色） —— */
+  --color-primary: #4f7cff;
+  --color-primary-hover: #3d69ea;
+  --color-primary-soft: rgba(79, 124, 255, 0.12);
+  --color-primary-soft-2: rgba(79, 124, 255, 0.18);
+  --color-primary-border: rgba(79, 124, 255, 0.28);
+
+  /* —— 中性色（文本 / 边框 / 背景） —— */
+  --color-bg-app: #f5f7fd;
+  --color-bg-elevated: rgba(255, 255, 255, 0.88);
+  --color-bg-subtle: #eef2fb;
+  --color-bg-muted: #edf3ff;
+  --color-bg-canvas: #fbfcff;
+  --color-surface-1: rgba(255, 255, 255, 0.76);
+  --color-surface-2: rgba(255, 255, 255, 0.92);
+  --color-surface-3: #ffffff;
+  --color-sidebar-bg: rgba(247, 249, 255, 0.84);
+
+  --color-text-strong: #0f172a;
+  --color-text-body: #334155;
+  --color-text-muted: #5f6f86;
+  --color-text-soft: #8a98af;
+  --color-text-placeholder: #adb8ca;
+
+  --color-border: rgba(148, 163, 184, 0.24);
+  --color-border-soft: rgba(148, 163, 184, 0.16);
+  --color-border-shell: rgba(148, 163, 184, 0.2);
+  --color-border-divider: rgba(148, 163, 184, 0.12);
+  --color-border-strong: rgba(15, 23, 42, 0.1);
+
+  /* —— 语义色 —— */
+  --color-success: #16a34a;
+  --color-success-bg: rgba(34, 197, 94, 0.12);
+  --color-success-border: rgba(34, 197, 94, 0.24);
+  --color-warning: #d97706;
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-warning-border: rgba(245, 158, 11, 0.24);
+  --color-danger: #dc2626;
+  --color-danger-bg: rgba(239, 68, 68, 0.12);
+
+  /* —— 状态 / 语言标签色（亮色） —— */
+  --color-status-active-bg: #ecfdf5;
+  --color-status-active-text: #059669;
+  --color-status-paused-bg: #fefce8;
+  --color-status-paused-text: #ca8a04;
+  --color-status-completed-bg: #eff6ff;
+  --color-status-completed-text: #2563eb;
+
+  --color-lang-py-bg: #fefce8;
+  --color-lang-py-text: #854d0e;
+  --color-lang-go-bg: #ecfdf5;
+  --color-lang-go-text: #065f46;
+  --color-lang-react-bg: #eff6ff;
+  --color-lang-react-text: #1d4ed8;
+  --color-lang-rust-bg: #fef2f2;
+  --color-lang-rust-text: #991b1b;
+
+  --color-bar-track: #f1f5f9;
+  --color-divider-light: #f1f5f9;
+
+  /* —— 代码块（深色） —— */
+  --color-code-bg: #1e293b;
+  --color-code-keyword: #7dd3fc;
+  --color-code-fn: #86efac;
+  --color-code-string: #fca5a5;
+  --color-code-comment: #475569;
+  --color-code-number: #d8b4fe;
+  --color-code-type: #fde68a;
+
+  /* —— 字体 —— */
+  --font-sans:
+    "DM Sans", -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* —— 圆角 —— */
+  --radius-xs: 4px;
+  --radius-sm: 7px;
+  --radius-md: 9px;
+  --radius-lg: 11px;
+  --radius-xl: 14px;
+  --radius-2xl: 24px;
+  --radius-full: 999px;
+
+  /* —— 间距（用于 padding/gap，不约束 margin） —— */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* —— 阴影 —— */
+  --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 18px 48px rgba(79, 124, 255, 0.12);
+  --shadow-lg: 0 30px 80px rgba(15, 23, 42, 0.14);
+  --shadow-focus: 0 0 0 4px rgba(79, 124, 255, 0.12);
+  --glow-primary:
+    0 0 0 1px rgba(79, 124, 255, 0.1), 0 20px 50px rgba(79, 124, 255, 0.16);
+
+  /* —— 过渡 —— */
+  --transition-fast: 0.12s ease;
+  --transition-base: 0.2s ease;
+}
+
+:root[data-theme="dark"] {
+  --color-primary: #7ca4ff;
+  --color-primary-hover: #96b5ff;
+  --color-primary-soft: rgba(124, 164, 255, 0.14);
+  --color-primary-soft-2: rgba(124, 164, 255, 0.2);
+  --color-primary-border: rgba(124, 164, 255, 0.26);
+
+  --color-bg-app: #09111f;
+  --color-bg-elevated: rgba(12, 19, 33, 0.86);
+  --color-bg-subtle: #13213a;
+  --color-bg-muted: #182847;
+  --color-bg-canvas: #060d18;
+  --color-surface-1: rgba(10, 17, 31, 0.74);
+  --color-surface-2: rgba(16, 28, 48, 0.92);
+  --color-surface-3: #17253d;
+  --color-sidebar-bg: rgba(9, 15, 28, 0.86);
+
+  --color-text-strong: #fcfdff;
+  --color-text-body: #e4ecfb;
+  --color-text-muted: #c1d0ea;
+  --color-text-soft: #9fb1d0;
+  --color-text-placeholder: #8396b8;
+
+  --color-border: rgba(181, 198, 226, 0.2);
+  --color-border-soft: rgba(181, 198, 226, 0.14);
+  --color-border-shell: rgba(181, 198, 226, 0.18);
+  --color-border-divider: rgba(181, 198, 226, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  --color-success: #4ade80;
+  --color-success-bg: rgba(74, 222, 128, 0.12);
+  --color-success-border: rgba(74, 222, 128, 0.24);
+  --color-warning: #fbbf24;
+  --color-warning-bg: rgba(251, 191, 36, 0.14);
+  --color-warning-border: rgba(251, 191, 36, 0.22);
+  --color-danger: #f87171;
+  --color-danger-bg: rgba(248, 113, 113, 0.14);
+
+  --color-status-active-bg: rgba(74, 222, 128, 0.14);
+  --color-status-active-text: #4ade80;
+  --color-status-paused-bg: rgba(251, 191, 36, 0.14);
+  --color-status-paused-text: #fbbf24;
+  --color-status-completed-bg: rgba(96, 165, 250, 0.14);
+  --color-status-completed-text: #60a5fa;
+
+  --color-lang-py-bg: rgba(251, 191, 36, 0.14);
+  --color-lang-py-text: #fbbf24;
+  --color-lang-go-bg: rgba(74, 222, 128, 0.14);
+  --color-lang-go-text: #4ade80;
+  --color-lang-react-bg: rgba(96, 165, 250, 0.14);
+  --color-lang-react-text: #60a5fa;
+  --color-lang-rust-bg: rgba(248, 113, 113, 0.14);
+  --color-lang-rust-text: #f87171;
+
+  --color-bar-track: rgba(181, 198, 226, 0.16);
+  --color-divider-light: rgba(181, 198, 226, 0.12);
+
+  --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 18px 48px rgba(0, 0, 0, 0.34);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 4px rgba(124, 164, 255, 0.18);
+  --glow-primary:
+    0 0 0 1px rgba(124, 164, 255, 0.18), 0 24px 56px rgba(54, 93, 196, 0.32);
+}

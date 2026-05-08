@@ -1,0 +1,244 @@
+.page {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.backRow {
+  display: flex;
+  align-items: center;
+}
+
+.backBtn {
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-3);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.backBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.modeBadge {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.statCard {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.statNum {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--color-text-strong);
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.correctColor {
+  color: #22c55e;
+}
+
+.wrongColor {
+  color: #ef4444;
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.questionCard {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.questionTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.questionIndex,
+.questionType,
+.resultBadge,
+.resultPending {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.questionIndex {
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+}
+
+.questionType {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.resultBadge {
+  color: #fff;
+}
+
+.resultCorrect {
+  background: #22c55e;
+}
+
+.resultWrong {
+  background: #ef4444;
+}
+
+.resultPending {
+  background: var(--color-bg-muted);
+  color: var(--color-text-soft);
+}
+
+.questionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 10px;
+}
+
+.questionDesc {
+  color: var(--color-text-body);
+  margin-bottom: 16px;
+}
+
+.optionList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.optionItem {
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-muted);
+  color: var(--color-text-body);
+}
+
+.optionContent :global(p) {
+  margin: 0;
+}
+
+.answerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.answerBlock,
+.feedbackBlock,
+.stateCard {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.blockTitle,
+.stateTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 10px;
+}
+
+.answerContent,
+.feedbackContent {
+  color: var(--color-text-body);
+}
+
+.answerContent :global(p),
+.feedbackContent :global(p) {
+  margin-top: 0;
+}
+
+.answerContent :global(p:last-child),
+.feedbackContent :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.placeholder,
+.stateDesc {
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 24px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .answerGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.mark svg {
+  width: 50%;
+  height: 50%;
+}
+
+.markDark {
+  background: var(--color-primary);
+}
+
+.markLight {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: inherit;
+}

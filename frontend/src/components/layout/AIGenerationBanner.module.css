@@ -1,0 +1,380 @@
+.wrap {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 0;
+  overflow: visible;
+  animation: slideDown 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 12px 16px;
+  margin: 8px 16px 0;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  background: color-mix(
+    in srgb,
+    var(--color-surface-3) 86%,
+    var(--color-primary-soft) 14%
+  );
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.leading {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.pulse {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 0 rgba(79, 124, 255, 0.35);
+  animation: pulse 1.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.texts {
+  min-width: 0;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.message {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.trailing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.etaText {
+  font-size: 11px;
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+}
+
+.progressMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progressBar {
+  width: 132px;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-border-soft);
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-hover)
+  );
+  transition: width 0.4s ease;
+}
+
+.progressValue {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+}
+
+.actionBtn,
+.closeBtn {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+}
+
+.actionBtn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionBtn:hover,
+.closeBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s ease;
+}
+
+.panelOpen {
+  max-height: 520px;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 16px 0;
+}
+
+.taskItem {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: color-mix(
+    in srgb,
+    var(--color-surface-3) 90%,
+    var(--color-primary-soft) 10%
+  );
+  box-shadow: var(--shadow-sm);
+}
+
+.taskTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.taskRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.taskTexts {
+  min-width: 0;
+  flex: 1;
+}
+
+.taskTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.taskMessage {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.taskStatus {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.taskMetaRow {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.taskProgressMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.taskProgressBar {
+  width: 160px;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-border-soft);
+}
+
+.taskProgressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-hover)
+  );
+  transition: width 0.4s ease;
+}
+
+.taskAuxText {
+  font-size: 11px;
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+}
+
+.taskActions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.taskActionBtn {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-body);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.taskActionBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.taskCloseBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-3);
+  color: var(--color-text-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.taskCloseBtn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.success .taskStatus {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.error .taskStatus {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.success .taskProgressFill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.error .taskProgressFill {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.success .pulse {
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.28);
+}
+
+.error .pulse {
+  background: #ef4444;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.28);
+}
+
+.success .progressFill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.error .progressFill {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .trailing {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .progressBar {
+    width: 100px;
+  }
+
+  .taskTop,
+  .taskMetaRow,
+  .taskActions {
+    align-items: flex-start;
+  }
+
+  .taskProgressBar {
+    width: 120px;
+  }
+}

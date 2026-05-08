@@ -1,0 +1,449 @@
+.content {
+  padding: 26px 30px;
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border-soft);
+  background: var(--color-bg-muted);
+  min-height: 0;
+  height: 100%;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-soft);
+  font-size: 14px;
+}
+
+.stateCard {
+  margin-top: 18px;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+}
+
+.stateTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 8px;
+}
+
+.stateDesc {
+  font-size: 13px;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.stateActions {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.phase {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.phase::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  letter-spacing: -0.015em;
+  margin-bottom: 5px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--color-text-soft);
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sep {
+  color: var(--color-border);
+}
+
+.section {
+  color: var(--color-primary);
+}
+
+.body {
+  font-size: 14px;
+  color: var(--color-text-body);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.body strong {
+  color: var(--color-text-strong);
+  font-weight: 500;
+}
+
+.codeInline {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.refBlock {
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 11px 14px;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.refTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft-2);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+
+.refText {
+  font-size: 12px;
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+.refLink {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  display: block;
+  margin-top: 4px;
+}
+
+.exercise {
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.exLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-warning);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exLabel::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-warning);
+}
+
+.exQuestion {
+  font-size: 14px;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  margin-bottom: 13px;
+}
+
+.exFunc {
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.exTextarea {
+  width: 100%;
+  background: var(--color-bg-subtle);
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--color-text-strong);
+  resize: vertical;
+  min-height: 96px;
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+.exTextarea:focus {
+  border-color: var(--color-primary);
+  background: var(--color-surface-3);
+}
+
+.exButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.mathHintBox {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-warning-border);
+  background: var(--color-warning-bg);
+}
+
+.mathHintTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 6px;
+}
+
+.mathHintText {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--color-text-body);
+}
+
+.mathSolutionBlock {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-bg-subtle);
+}
+
+/* ── AI 骨架屏加载 ── */
+.skeletonWrap {
+  padding: 20px 0;
+}
+
+.skeletonHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.skeletonPulse {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: skPulse 1.5s ease-in-out infinite;
+}
+
+.skeletonMsg {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-body);
+  animation: skFade 3s ease-in-out infinite;
+}
+
+.skeletonLines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skeletonLine {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--color-border-soft) 25%,
+    var(--color-bg-muted) 50%,
+    var(--color-border-soft) 75%
+  );
+  background-size: 200% 100%;
+  animation: skShimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonW90 {
+  width: 90%;
+}
+.skeletonW80 {
+  width: 80%;
+}
+.skeletonW70 {
+  width: 70%;
+}
+.skeletonW60 {
+  width: 60%;
+}
+.skeletonW50 {
+  width: 50%;
+}
+
+.skeletonBlock {
+  height: 80px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--color-border-soft) 25%,
+    var(--color-bg-muted) 50%,
+    var(--color-border-soft) 75%
+  );
+  background-size: 200% 100%;
+  animation: skShimmer 1.5s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes skShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes skPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes skFade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ── 要点列表 ── */
+.keyPoints {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.keyPoints li {
+  font-size: 12px;
+  color: var(--color-text-body);
+  line-height: 1.8;
+  padding-left: 14px;
+  position: relative;
+}
+
+.keyPoints li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* ── Monaco 编辑器包裹 ── */
+.editorWrap {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  margin-bottom: 4px;
+}
+
+/* ── 代码评价结果 ── */
+.reviewBlock {
+  margin-top: 18px;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.reviewTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 14px;
+}
+
+.reviewScores {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scoreDim {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scoreLabel {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  min-width: 48px;
+}
+
+.scoreBar {
+  flex: 1;
+  height: 8px;
+  background: var(--color-border-soft);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.scoreFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+.scoreNum {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  min-width: 28px;
+  text-align: right;
+}
+
+.reviewSuggestion {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  padding: 10px 12px;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-sm);
+}
